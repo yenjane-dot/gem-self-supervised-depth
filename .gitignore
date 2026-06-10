@@ -17,3 +17,21 @@ tmp/
 temp/
 
 auth.json
+
+# Prevent accidental publication or submission artifacts from being committed
+cover_letter*
+submission*
+manuscript*
+paper*
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.bak
+*.tmp
+*.temp

@@ -109,6 +109,26 @@ This script checks:
 - whether the first sample in the main split resolves to a real KITTI image,
 - and whether optional depth files are present.
 
+## Public repository safety check
+
+Before pushing local changes to GitHub, run:
+
+```bash
+python baselines/monodepth2/scan_public_repo.py
+```
+
+This script scans the repository for file types and filenames that commonly
+belong to manuscripts or submission packages, such as:
+
+- cover letters,
+- manuscript files,
+- office documents,
+- archives, and
+- other publication-related artifacts.
+
+It is intended as a lightweight guardrail against accidentally publishing
+unrelated local files.
+
 ## Splits
 
 - `splits/custom_30drivers/`: main split used for the GEM experiments
@@ -202,6 +222,9 @@ pass, warping step, loss computation, and backward pass without crashing.
   additional local experiment bookkeeping not redistributed here.
 - For exact reproducibility, keep the default image resolution (`192x640`),
   batch size (`8`), and seed (`42`) used in the released scripts.
+- Do not place manuscript PDFs, submission forms, cover letters, or reviewer
+  correspondence inside this repository. Keep publication materials in a
+  separate local directory.
 
 ## License
 
